@@ -1,13 +1,15 @@
 package com.evento.model;
 
 import java.io.Serializable;
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javassist.SerialVersionUID;
 
@@ -23,7 +25,9 @@ public class Evento implements Serializable{
 	
 	private String nome;
 	private String local;
-	private Calendar data;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date data;
 	private String horario;
 	
 	
@@ -39,10 +43,11 @@ public class Evento implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Calendar getData() {
+	
+	public Date getData() {
 		return data;
 	}
-	public void setData(Calendar data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 	public String getLocal() {
