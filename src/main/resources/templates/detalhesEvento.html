@@ -17,7 +17,7 @@
 		<h1>Lista de Eventos</h1>
 		<h3><a href="/listaEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Evento</a></h3>
 			<div th:each="evento : ${evento}" class="container" >
-				<div>
+				<div >
 					<p>NOME: <span th:text="${evento.nome}"></span> </p>
 					<p>LOCAL: <span th:text="${evento.local}"></span> </p>
 					<p>DATA: <span th:text="${evento.data}"></span> </p>
@@ -25,14 +25,25 @@
 				</div>
 				 
 				 
-				   <form method="post">
-				   		<p>RG: <input type="text" value="" name="rg" /> </p>
+				   <form class="container" method="post">
 				   		<p>Nome:  <input type="text" value="" name="nomeConvidado" /> </p>
+				   		<p>RG: <input type="text" value="" name="rg" /> </p>
+				   		
 				   		<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
-				   </form>
-				  	
+				   </form>  
+				   
+		<h5>Lista de Convidados</h5>		   	
 			</div> 
-		     
+		    <div class="container" th:each="convidado : ${convidados}">
+		    	<div class="row">
+		    	   <div class="input-field col s6">
+		    		<p>Nome: <span th:text="${convidado.nomeConvidado}"></span></p>
+		    	   </div>	
+		    	    <div class="input-field col s3">
+		    		<p>RG:	<span th:text="${convidado.rg}"></span></p>
+		    	    </div>	
+		    	</div>
+		    </div>
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
