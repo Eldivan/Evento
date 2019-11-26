@@ -10,40 +10,54 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		
+	  <link rel="stylesheet" href="style/stylecss.css"/>
 </head>	
 	
  <body>
-		<h1>Lista de Eventos</h1>
-		<h3><a href="/listaEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Lista de Evento</a></h3>
-			<div th:each="evento : ${evento}" class="container" >
-				<div >
+ 	<header>
+		<nav>
+			 <div class="nav-wrapper">
+			    <a href="#" class="brand-logo">Lista de Eventos</a>
+			    <ul id="nav-mobile" class="right hide-on-med-and-down">
+			    <li><a href="/listaEventos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de eventos</a></li>
+			    </ul>
+			 </div>
+		</nav>
+    </header>
+	<br> 
+	<br>		
+		
+			<div th:each="evento : ${evento}" class="container detalhesEvento" >
+				<h5>Detalhes: </h5>
 					<p>NOME: <span th:text="${evento.nome}"></span> </p>
 					<p>LOCAL: <span th:text="${evento.local}"></span> </p>
 					<p>DATA: <span th:text="${evento.data}"></span> </p>
 					<p>HORARIO: <span th:text="${evento.horario}"></span> </p>
-				</div>
+				
 					<th:block th:include="mensagemValidacao"></th:block> 
-				 
-				   <form class="container" method="post">
-				   		<p>Nome:  <input type="text" value="" name="nomeConvidado" /> </p>
-				   		<p>RG: <input type="text" value="" name="rg" /> </p>
-				   		
+			</div>
+			<div>
+			 <form class="container form" method="post">
+				   <p>Nome:  <input type="text" value="" name="nomeConvidado" /> </p>
+				   <p>RG: <input type="text" value="" name="rg" /> </p>		
 				   		<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
-				   </form>  
-				   
-		<h5>Lista de Convidados</h5>		   	
-			</div> 
-		    <div class="container" th:each="convidado : ${convidados}">
-		    	<div class="row">
-		    	   <div class="input-field col s6">
-		    		<p>Nome: <span th:text="${convidado.nomeConvidado}"></span></p>
-		    	   </div>	
-		    	    <div class="input-field col s3">
-		    		<p>RG:	<span th:text="${convidado.rg}"></span></p>
-		    	    </div>	
-		    	</div>
-		    </div>
+			 </form>  
+			</div>
+		    <table class="container nomeConvidado">
+				<thead>
+					<tr>
+						<th>Nome Convidado </th>
+						<th> RG </th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="convidado : ${convidados}">
+						<td><span th:text="${convidado.nomeConvidado}" ></span> </td>
+						<td><span th:text="${convidado.rg}" ></span> </td>
+					</tr>
+				</tbody>
+			</table>			   
+		
 	  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
