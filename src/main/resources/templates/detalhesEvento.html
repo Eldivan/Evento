@@ -26,9 +26,9 @@
     </header>
 	<br> 
 	<br>		
-		
+		<table >
 			<div th:each="evento : ${evento}" class="container detalhesEvento" >
-				<h5>Detalhes: </h5>
+				<h5>Detalhes do evento: </h5>
 					<p>NOME: <span th:text="${evento.nome}"></span> </p>
 					<p>LOCAL: <span th:text="${evento.local}"></span> </p>
 					<p>DATA: <span th:text="${evento.data}"></span> </p>
@@ -36,8 +36,9 @@
 				
 					<th:block th:include="mensagemValidacao"></th:block> 
 			</div>
+		</table>	
 			<div>
-			 <form class="container form" method="post">
+			 <form class="container formEvento" method="post">
 				   <p>Nome:  <input type="text" value="" name="nomeConvidado" /> </p>
 				   <p>RG: <input type="text" value="" name="rg" /> </p>		
 				   		<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
@@ -48,12 +49,14 @@
 					<tr>
 						<th>Nome Convidado </th>
 						<th> RG </th>
+					    <td>Deletar</td> 
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="convidado : ${convidados}">
 						<td><span th:text="${convidado.nomeConvidado}" ></span> </td>
 						<td><span th:text="${convidado.rg}" ></span> </td>
+					    <th> <a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}"><i class="material-icons left">delete</i> </a> </td>  
 					</tr>
 				</tbody>
 			</table>			   

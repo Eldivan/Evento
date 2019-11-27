@@ -1,12 +1,11 @@
-package com.evento.model;
+ package com.evento.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-
-import org.hibernate.validator.constraints.Length;
+import com.evento.model.Evento;
 
 @Entity
 @Table
