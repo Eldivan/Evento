@@ -29,25 +29,31 @@
 	<br>
 		
 		<th:block th:include="mensagemValidacao"></th:block>
+	<div class="container formCadastroEvento">
+			<h5>Cadastro de Evento </h5>
+			<form  method="post">
+					<div>
+				NOME: <input type="text" value="" name="nome">
+					<div class="row">
+							
+					<div class="input-field col s6">
+			    LOCAl: <input type="text" value="" name="local">
+					</div>
+					
+					<div class="input-field col s3">
+				DATA:<input type="text" value="" name="data">
+					</div>
+					
+					<div class="input-field col s3">
+				HORARIO:<input type="time" value="" name="horario">
+					</div>
+				
+			  <button class="waves-effect waves-light btn" type="submit" >Salvar </button>
+		    </form>
+	 </div>	
 		
-		<form class="container" method="post">
-			NOME: <input type="text" value="" name="nome">
-				<div class="row">
-				<div class="input-field col s6">
-		    LOCAl: <input type="text" value="" name="local">
-				</div>
-				<div class="input-field col s3">
-			DATA:<input type="text" value="" name="data">
-				</div>
-				<div class="input-field col s3">
-			HORARIO:<input type="time" value="" name="horario">
-				</div>
-				</div>
-			<button class="waves-effect waves-light btn" type="submit" >Salvar </button>
-		</form>
-	
-	</body>
-
-	  	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      
+  </body>    
 </html>

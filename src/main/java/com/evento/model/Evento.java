@@ -34,7 +34,7 @@ public class Evento implements Serializable{
 	@NotEmpty
 	private String local;
 	
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	//@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date data;
 	
 	@NotEmpty

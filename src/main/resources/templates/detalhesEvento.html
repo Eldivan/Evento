@@ -26,7 +26,7 @@
     </header>
 	<br> 
 	<br>		
-		<table >
+		
 			<div th:each="evento : ${evento}" class="container detalhesEvento" >
 				<h5>Detalhes do evento: </h5>
 					<p>NOME: <span th:text="${evento.nome}"></span> </p>
@@ -36,18 +36,21 @@
 				
 					<th:block th:include="mensagemValidacao"></th:block> 
 			</div>
-		</table>	
+			
 			<div>
-			 <form class="container formEvento" method="post">
+			    <form class="container formDetalheEvento" method="post">	
+			    	<h5>Cadastro de Convidado </h5>
 				   <p>Nome:  <input type="text" value="" name="nomeConvidado" /> </p>
 				   <p>RG: <input type="text" value="" name="rg" /> </p>	
 				   
 				   		<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
-			 </form>  
+			    </form>  
 			</div>
-		    <table class="container nomeConvidado">
+			
+		   <table class="container listaNomeConvidado">
 				<thead>
-					<tr>
+					<h5 class="container">Lista de Convidado </h5>
+					<tr> 
 						<th>Nome Convidado </th>
 						<th> RG </th>
 					    <td>Deletar</td> 

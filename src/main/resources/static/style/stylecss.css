@@ -1,5 +1,5 @@
 .detalhesEvento{
-	box-shadow: opx opx 5px grey;
+	box-shadow: 0px 0px 5px grey;
 	padding-top: 20px;
 	padding-left: 20px;
 	margin-bottom: 60px;
@@ -7,20 +7,31 @@
 	
 }
 
-.formEvento{
-	box-shadow: opx opx 5px grey;
-	padding-left: 20px;
-	margin-bottom: 60px;
-	margin-bottom: 40px;
-	
-
-}
-
-.nomeConvidado{
-	box-shadow: opx opx 5px grey;
+.formDetalheEvento{
+	box-shadow: 0px 0px 5px grey;
 	padding-top: 20px;
 	padding-left: 20px;
+	padding-bottom: 20px;
 	margin-bottom: 60px;
 	
+
 }
 
+.listaNomeConvidado{
+	width: 50%;
+	
+}
+.formCadastroEvento{
+	box-shadow: 0px 0px 5px grey;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 60px;
+}
+
+.listaEventos{
+	box-shadow: 0px 0px 5px grey;
+	padding-top: 20px;
+	padding-left: 20px;
+	margin-bottom: 60px; 
+}
